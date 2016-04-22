@@ -1,6 +1,7 @@
 <html>
 <head>
    <title>401 Authorization Required</title>
+   <meta http-equiv="content-type" content="text/html; charset=utf8" />
    <style type="text/css">
 html, body {
    background: #0b1933;
