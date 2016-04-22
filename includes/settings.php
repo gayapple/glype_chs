@@ -204,7 +204,8 @@ $CONFIG['options']['encodeURL'] = array(
 $CONFIG['options']['encodePage'] = array(
 	'title'	 => '加密页面',
 	'desc'	 => '有助于避免过滤器发送和接收JavaScript之前加密页面',
-	'default' => true,
+	//modify by selectersky 2016.04.22 打开加密会导致非utf8页面乱码，因此设置为关闭
+	'default' => false,
 	'force'	 => true
 );
 

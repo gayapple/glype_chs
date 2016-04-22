@@ -46,6 +46,7 @@ header('Cache-Control:');
 header('Last-Modified:');
 
 
+
 /*****************************************************************
 * Find URI of resource to load
 * Flag and bitfield already extracted in /includes/init.php
@@ -1585,7 +1586,7 @@ if ( $fetch->parseType ) {
 			if ( $fetch->sniff == false ) {
 				$inject = true;
 			}
-
+			
 			# Run through HTML parser
 			$document = $parser->HTMLDocument($document, $insert, $inject, $footer);
 

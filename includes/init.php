@@ -71,14 +71,14 @@ if ($CONFIG['enable_blockscript']) {
 * Language - text for error messages
 ******************************************************************/
 
-$phrases['no_hotlink']		 = 'Ö±½ÓµÁÁ´µ½´úÀíµÄÍøÒ³ÊÇ²»ÔÊĞíµÄ.';
-$phrases['invalid_url']		 = 'ËùÇëÇóµÄÍøÖ·ÎŞ·¨Ê¶±ğÎªÓĞĞ§µÄURL : %s';
-$phrases['banned_site']		 = '±§Ç¸£¬´úÀíÇëÇó²»µ½Õâ¸öÕ¾µã (<b>%s</b>) »òÕßÇ¿ÖÆ²é¿´.';
-$phrases['file_too_large']	 = 'ËùÇëÇóµÄÎÄ¼şÌ«´ó¡£ÔÊĞíµÄ×î´óÎÄ¼ş´óĞ¡ÊÇ %s MB.';
-$phrases['server_busy']		 = '·şÎñÆ÷ÕıÃ¦£¬ÎŞ·¨´¦ÀíÄúµÄÇëÇó¡£ÇëÔÚ¼¸·ÖÖÓºóÔÙÊÔÒ»´Î¡£¶ÔÄúÔì³ÉµÄ²»±ãÎÒÃÇ±íÊ¾µÀÇ¸.';
-$phrases['http_error']		 = 'ËùÇëÇóµÄ×ÊÔ´ÎŞ·¨¼ÓÔØÒòÎª·şÎñÆ÷·µ»Ø´íÎó:<br> &nbsp; <b>%s %s</b> (<span class="tooltip" onmouseout="exit()" onmouseover="tooltip(\'%s\');">?</span>).';
-$phrases['curl_error']		 = 'ËùÇëÇóµÄ×ÊÔ´ÎŞ·¨¼ÓÔØ. libcurl·µ»Ø´íÎó:<br><b>%s</b>';
-$phrases['unknown_error']	 = '¸Ã½Å±¾Óöµ½Î´Öª´íÎó. ´íÎóID: <b>%s</b>.';
+$phrases['no_hotlink']		 = 'ç›´æ¥ç›—é“¾åˆ°ä»£ç†çš„ç½‘é¡µæ˜¯ä¸å…è®¸çš„.';
+$phrases['invalid_url']		 = 'æ‰€è¯·æ±‚çš„ç½‘å€æ— æ³•è¯†åˆ«ä¸ºæœ‰æ•ˆçš„URL : %s';
+$phrases['banned_site']		 = 'æŠ±æ­‰ï¼Œä»£ç†è¯·æ±‚ä¸åˆ°è¿™ä¸ªç«™ç‚¹ (<b>%s</b>) æˆ–è€…å¼ºåˆ¶æŸ¥çœ‹.';
+$phrases['file_too_large']	 = 'æ‰€è¯·æ±‚çš„æ–‡ä»¶å¤ªå¤§ã€‚å…è®¸çš„æœ€å¤§æ–‡ä»¶å¤§å°æ˜¯ %s MB.';
+$phrases['server_busy']		 = 'æœåŠ¡å™¨æ­£å¿™ï¼Œæ— æ³•å¤„ç†æ‚¨çš„è¯·æ±‚ã€‚è¯·åœ¨å‡ åˆ†é’Ÿåå†è¯•ä¸€æ¬¡ã€‚å¯¹æ‚¨é€ æˆçš„ä¸ä¾¿æˆ‘ä»¬è¡¨ç¤ºé“æ­‰.';
+$phrases['http_error']		 = 'æ‰€è¯·æ±‚çš„èµ„æºæ— æ³•åŠ è½½å› ä¸ºæœåŠ¡å™¨è¿”å›é”™è¯¯:<br> &nbsp; <b>%s %s</b> (<span class="tooltip" onmouseout="exit()" onmouseover="tooltip(\'%s\');">?</span>).';
+$phrases['curl_error']		 = 'æ‰€è¯·æ±‚çš„èµ„æºæ— æ³•åŠ è½½. libcurlè¿”å›é”™è¯¯:<br><b>%s</b>';
+$phrases['unknown_error']	 = 'è¯¥è„šæœ¬é‡åˆ°æœªçŸ¥é”™è¯¯. é”™è¯¯ID: <b>%s</b>.';
 
 # If an HTTP error (status code >= 400) is encountered, the script will look here
 # for an additional "friendly" explanation of the problem.

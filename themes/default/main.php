@@ -1,7 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="zh-CN" lang="zh-CN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=GBK" />
+<title><!--[site_name]--></title>
+<meta http-equiv="content-type" content="text/html; charset=utf8" />
 <meta name="description" content="<!--[meta_description]-->">
 <meta name="keywords" content="<!--[meta_keywords]-->">
 <style type="text/css">
@@ -225,7 +227,7 @@
 
 		
 
-		<h2>请输入网址</h2>
+		<h2>璇疯緭鍏ョ綉鍧�</h2>
 
 		<!--[index_above_form]-->
 
@@ -243,14 +245,14 @@
 		<!-- CONTENT END -->
 	 
 		<ul id="nav">
-			<li class="left"><a href="index.php">主页</a></li>
-			<li class="left"><a href="edit-browser.php">编辑浏览器</a></li>
-			<li class="left"><a href="cookies.php">管理Cookies</a></li>
-			<li><a href="disclaimer.php">免责声明</a></li>            
+			<li class="left"><a href="index.php">涓婚〉</a></li>
+			<li class="left"><a href="edit-browser.php">缂栬緫娴忚鍣�</a></li>
+			<li class="left"><a href="cookies.php">绠＄悊Cookies</a></li>
+			<li><a href="disclaimer.php">鍏嶈矗澹版槑</a></li>            
 		</ul>
 	</div>
 	<div id="footer">
-	    ----------本在线代理由<a href="http://dodoyun.net">霧嶋 董香</a>完全汉化&nbsp;<br>Powered by <a href="http://www.glype.com/">Glype</a>&reg;<!--[version]-->.
+	    ----------鏈湪绾夸唬鐞嗙敱<a href="http://dodoyun.net">闇у秼 钁ｉ</a>瀹屽叏姹夊寲&nbsp;<br>Powered by <a href="http://www.glype.com/">Glype</a>&reg;<!--[version]-->.
 		
 	</div>
 </div>

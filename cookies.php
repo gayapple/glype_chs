@@ -29,14 +29,14 @@ ob_start();
 ******************************************************************/
 
 echo <<<OUT
-	<h2 class="first">����cookies</h2>
-	<p>�����Բ鿴��ɾ��ͨ�����ǵķ������վ���cookie�����cookies����:</p>
+	<h2 class="first">管理cookies</h2>
+	<p>您可以查看和删除通过我们的服务访问站点的cookie。你的cookies如下:</p>
 	<form action="includes/process.php?action=cookies" method="post">
 		<table cellpadding="2" cellspacing="0" align="center">
 			<tr>
-				<th width="33%">��վ</th>
-				<th width="33%">����</th>
-				<th width="33%"> ֵ</th>
+				<th width="33%">网站</th>
+				<th width="33%">名称</th>
+				<th width="33%"> 值</th>
 				<th>&nbsp;</th>
 			</tr>
 
@@ -148,7 +148,7 @@ if ( empty($showCookies) ) {
 
 	echo <<<OUT
 		<tr>
-			<td colspan="4" align="center">û���ҵ������κ�cookies</td>
+			<td colspan="4" align="center">没有找到您的任何cookies</td>
 		</tr>
 
 OUT;
@@ -205,7 +205,7 @@ OUT;
 
 echo <<<OUT
 			<tr>
-				<th colspan="3" align="right"><input type="submit" value="ɾ��"></th>
+				<th colspan="3" align="right"><input type="submit" value="删除"></th>
 				<th><input type="checkbox" name="checkall"  onclick="selectAll(this)"></th>
 			</tr>
 		</table>

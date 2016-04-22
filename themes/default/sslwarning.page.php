@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>°²È«¾¯¸æ</title>
+	<title>å®‰å…¨è­¦å‘Š</title>
 	<style type="text/css">
 html, body {
 	background: #0b1933;
@@ -24,16 +24,16 @@ form {
    <base href="<?php echo GLYPE_URL; ?>/">
 </head>
 <body>
-	<div id="¾¯¸æ">
+	<div id="è­¦å‘Š">
 		<h1>Warning!</h1>
-		<p>Äú·ÃÎÊµÄÍøÕ¾ÊÔÍ¼Í¨¹ýÒ»¸ö°²È«Á¬½Ó½øÐÐ·ÃÎÊ. Õâ¸ö´úÀí²¢·Ç°²È«</p>
-      <p>µã»÷½«¼ÌÐø·¢ËÍÃô¸ÐÊý¾Ý, ²¢Í¨¹ý±¾ÔÚÏßä¯ÀÀÆ÷·¢ËÍ¸øÄã</p>
+		<p>æ‚¨è®¿é—®çš„ç½‘ç«™è¯•å›¾é€šè¿‡ä¸€ä¸ªå®‰å…¨è¿žæŽ¥è¿›è¡Œè®¿é—®. è¿™ä¸ªä»£ç†å¹¶éžå®‰å…¨</p>
+      <p>ç‚¹å‡»å°†ç»§ç»­å‘é€æ•æ„Ÿæ•°æ®, å¹¶é€šè¿‡æœ¬åœ¨çº¿æµè§ˆå™¨å‘é€ç»™ä½ </p>
       <form action="includes/process.php" method="get">
          <input type="hidden" name="action" value="sslagree">
-			<input type="submit" value="ÈÔÈ»¼ÌÐø...">
-         <input type="button" value="·µ»ØÖ÷Ò³" onclick="window.location='.';">
+			<input type="submit" value="ä»ç„¶ç»§ç»­...">
+         <input type="button" value="è¿”å›žä¸»é¡µ" onclick="window.location='.';">
 		</form>
-      <p><b>×¢Òâ:</b> Õâ¸ö¾¯¸æ½«»áÖØ¸´³öÏÖ.</p>
+      <p><b>æ³¨æ„:</b> è¿™ä¸ªè­¦å‘Šå°†ä¼šé‡å¤å‡ºçŽ°.</p>
 	</div>
 </body>
 </html>

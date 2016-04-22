@@ -119,16 +119,16 @@ echo <<<OUT
 		});
 	</script>
 
-	<h2 class="first">±à¼­ä¯ÀÀÆ÷</h2>
-	<p>Äã¿ÉÒÔÉèÖÃÏÂÃæµÄ¡°ÐéÄâä¯ÀÀÆ÷¡±¡£ ÕâÐ©Ñ¡Ïî½«»áÓ°Ïì·¢ËÍµ½Ä¿±ê·þÎñÆ÷µÄÊý¾ÝÐÅÏ¢¡£ </p>
+	<h2 class="first">ç¼–è¾‘æµè§ˆå™¨</h2>
+	<p>ä½ å¯ä»¥è®¾ç½®ä¸‹é¢çš„â€œè™šæ‹Ÿæµè§ˆå™¨â€ã€‚ è¿™äº›é€‰é¡¹å°†ä¼šå½±å“å‘é€åˆ°ç›®æ ‡æœåŠ¡å™¨çš„æ•°æ®ä¿¡æ¯ã€‚ </p>
 	<form action="includes/process.php?action=edit-browser" method="post">
 
 		<table cellpadding="2" cellspacing="0" align="center" class="large-table">
 			<tr>
-				<th colspan="2">Ê¹ÓÃ´úÀí (<a style="cursor:help;" onmouseover="tooltip('Your user agent is sent to the server and identifies the software you are using to access the internet.')" onmouseout="exit()">?</a>)</th>
+				<th colspan="2">ä½¿ç”¨ä»£ç† (<a style="cursor:help;" onmouseover="tooltip('Your user agent is sent to the server and identifies the software you are using to access the internet.')" onmouseout="exit()">?</a>)</th>
 			</tr>
 			<tr>
-				<td width="150">Ñ¡ÔñÔ¤Éèä¯ÀÀÆ÷:</td>
+				<td width="150">é€‰æ‹©é¢„è®¾æµè§ˆå™¨:</td>
 				<td>
 					<select id="user-agent-presets" onchange="updateCustomUA(this)">
 						<option value="Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.04506.648; .NET CLR 3.5.21022; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET4.0C; .NET4.0E)">XP with IE 8</option>
@@ -161,30 +161,30 @@ echo <<<OUT
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" class="small-note"><b>×¢Òâ:</b> Ò»Ð©ÍøÕ¾¿ÉÄÜ¸ù¾ÝÄãµÄ´úÀí¶øµ÷ÕûÄÚÈÝ¡£</td>
+				<td colspan="2" class="small-note"><b>æ³¨æ„:</b> ä¸€äº›ç½‘ç«™å¯èƒ½æ ¹æ®ä½ çš„ä»£ç†è€Œè°ƒæ•´å†…å®¹ã€‚</td>
 			</tr>
 		</table>
 
 		<table cellpadding="2" cellspacing="0" align="center" class="large-table">
 			<tr>
-				<th colspan="2">ÍøÂçÀ´Â· (<a style="cursor:help;" onmouseover="tooltip('The URL of the referring page is normally sent to the server. You can override this to a custom value or set to send no referrer for extra privacy.')" onmouseout="exit()">?</a>)</th>
+				<th colspan="2">ç½‘ç»œæ¥è·¯ (<a style="cursor:help;" onmouseover="tooltip('The URL of the referring page is normally sent to the server. You can override this to a custom value or set to send no referrer for extra privacy.')" onmouseout="exit()">?</a>)</th>
 			</tr>
 			<tr>
-				<td width="150">·¢ËÍÕæÊµÀ´Â·:</td>
+				<td width="150">å‘é€çœŸå®žæ¥è·¯:</td>
 				<td><input type="checkbox" name="real-referrer" id="real-referrer" onclick="clearCustomReferrer(this)"></td>
 			</tr>
 			<tr>
-				<td>×Ô¶¨ÒåÀ´Â·:</td>
+				<td>è‡ªå®šä¹‰æ¥è·¯:</td>
 				<td><input type="text" name="custom-referrer" id="custom-referrer" class="full-width" onchange="clearRealReferrer()"></td>
 			</tr>
 			<tr>
-				<td colspan="2" class="small-note"><b>×¢Òâ:</b> ÈôÉèÖÃ²»µ±£¬Ò»Ð©ÍøÕ¾»áÑéÖ¤ÄãµÄÀ´Â·²¢¾Ü¾ø·þÎñ¡£ </td>
+				<td colspan="2" class="small-note"><b>æ³¨æ„:</b> è‹¥è®¾ç½®ä¸å½“ï¼Œä¸€äº›ç½‘ç«™ä¼šéªŒè¯ä½ çš„æ¥è·¯å¹¶æ‹’ç»æœåŠ¡ã€‚ </td>
 			</tr>
 		</table>
 
 		<br>
 
-		<div style="text-align: center;"><input type="submit" value="±£´æ"> {$return}</div>
+		<div style="text-align: center;"><input type="submit" value="ä¿å­˜"> {$return}</div>
 
 		{$returnField}
 
