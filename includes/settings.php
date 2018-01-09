@@ -195,7 +195,7 @@ $CONFIG['tmp_cleanup_logs'] = 0;
 ******************************************************************/
 
 $CONFIG['options']['encodeURL'] = array(
-	'title'	 => '加密URL',
+	'title'	 => '加密 URL',
 	'desc'	 => '查看加密网页的URL',
 	'default' => true,
 	'force'	 => true
@@ -258,10 +258,20 @@ $CONFIG['options']['stripObjects'] = array(
 
 # Settings file version for determining compatibility with admin
 # tool.
-$CONFIG['version'] = '1.4.11';
+$CONFIG['version'] = '1.4.15';
 
 //---PRESERVE ME---
 // Anything below this line will be preserved when the admin control panel rewrites
 // the settings. Useful for storing settings that don't/can't be changed from the control panel
 
 $adminDetails['admin'] = 'e10adc3949ba59abbe56e057f20f883e';
+
+
+
+
+
+
+
+
+
+

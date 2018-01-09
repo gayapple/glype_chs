@@ -1,6 +1,6 @@
 <?php
 /*******************************************************************
-* Glype is copyright and trademark 2007-2015 UpsideOut, Inc. d/b/a Glype
+* Glype is copyright and trademark 2007-2016 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
 *
 * Use of Glype is subject to the terms of the Software License Agreement.
@@ -29,14 +29,14 @@ ob_start();
 ******************************************************************/
 
 echo <<<OUT
-	<h2 class="first">管理cookies</h2>
-	<p>您可以查看和删除通过我们的服务访问站点的cookie。你的cookies如下:</p>
+	<h2 class="first">管理 Cookies</h2>
+	<p>您可以查看和删除cookie设置在你的电脑上通过网站访问我们的服务。下面列出了您的cookie:</p>
 	<form action="includes/process.php?action=cookies" method="post">
 		<table cellpadding="2" cellspacing="0" align="center">
 			<tr>
-				<th width="33%">网站</th>
-				<th width="33%">名称</th>
-				<th width="33%"> 值</th>
+				<th width="33%">Website</th>
+				<th width="33%">Name</th>
+				<th width="33%">Value</th>
 				<th>&nbsp;</th>
 			</tr>
 
@@ -148,7 +148,7 @@ if ( empty($showCookies) ) {
 
 	echo <<<OUT
 		<tr>
-			<td colspan="4" align="center">没有找到您的任何cookies</td>
+			<td colspan="4" align="center">No cookies found</td>
 		</tr>
 
 OUT;
@@ -205,7 +205,7 @@ OUT;
 
 echo <<<OUT
 			<tr>
-				<th colspan="3" align="right"><input type="submit" value="删除"></th>
+				<th colspan="3" align="right"><input type="submit" value="Delete"></th>
 				<th><input type="checkbox" name="checkall"  onclick="selectAll(this)"></th>
 			</tr>
 		</table>

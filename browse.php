@@ -1,6 +1,6 @@
 <?php
 /*******************************************************************
-* Glype is copyright and trademark 2007-2015 UpsideOut, Inc. d/b/a Glype
+* Glype is copyright and trademark 2007-2016 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
 *
 * Use of Glype is subject to the terms of the Software License Agreement.
@@ -44,7 +44,6 @@ header('Content-Type:');
 # And remove the caching headers
 header('Cache-Control:');
 header('Last-Modified:');
-
 
 
 /*****************************************************************
@@ -268,8 +267,8 @@ if ( ! $CONFIG['queue_transfers'] ) {
 ******************************************************************/
 
 if (
-	# Option enabled (and possible? safe_mode prevents shell_exec)
-	! SAFE_MODE && $CONFIG['load_limit']
+	# Option enabled
+	$CONFIG['load_limit']
 
 	# Ignore inline elements - when borderline on the server load, if the HTML
 	# page downloads fine but the inline images, css and js are blocked, the user
@@ -328,6 +327,11 @@ $toSet[CURLOPT_SSL_VERIFYHOST] = false;
 
 # Send an empty Expect header (avoids 100 responses)
 $toSet[CURLOPT_HTTPHEADER][] = 'Expect:';
+
+# Use IPv4 for DNS resolution
+if (defined('CURLOPT_IPRESOLVE') && defined('CURL_IPRESOLVE_V4')) {
+	$toSet[CURLOPT_IPRESOLVE][] = 'CURL_IPRESOLVE_V4';
+}
 
 # Can we use "If-Modified-Since" to save a transfer? Server can return 304 Not Modified
 if ( isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ) {
@@ -847,9 +851,7 @@ class Request {
 		$this->curlOptions = $curlOptions;
 
 		# Extend the PHP timeout
-		if ( ! SAFE_MODE ) {
-			set_time_limit($CONFIG['transfer_timeout']);
-		}
+		set_time_limit($CONFIG['transfer_timeout']);
 
 		# Record debug information
 		if ( DEBUG_MODE ) {
@@ -1064,6 +1066,11 @@ class Request {
 				$this->parseType = $types[$mime];
 			}
 
+			# validate mimetypes
+			if (!preg_match('#^(application|audio|image|text|video)/#i', $mime)) {
+				header('Content-Type: text/plain');
+			}
+
 		} else {
 
 			# Tell our read body function to 'sniff' the data to determine type
@@ -1175,21 +1182,14 @@ class Request {
 
 	private function firstBody($data) {
 
-		# Do we want to sniff the data? Determines if ascii or binary.
+		# Do we want to sniff the data to gues the mimetype?
 		if ( $this->sniff ) {
-
-			# Take a sample of 100 chars chosen at random
-			$length = strlen($data);
-			$sample = $length < 150 ? $data : substr($data, rand(0, $length-100), 100);
-
-			# Assume ASCII if more than 95% of bytes are "normal" text characters
-			if ( strlen(preg_replace('#[^A-Z0-9\!"$%\^&*\(\)=\+\\\\|\[\]\{\};:\\\'\@\#~,\.<>/\?\-]#i', '', $sample)) > 95 ) {
-
-				# To do: expand this to detect if html/js/css
+			if (stripos($data, '<html')!==false && stripos($data, '<head')!==false) {
+				header('Content-Type: text/html');
 				$this->parseType = 'html';
-
+			} else {
+				header('Content-Type: text/plain');
 			}
-
 		}
 
 		# Now we know if parsing is required, we can forward content-length
@@ -1586,7 +1586,7 @@ if ( $fetch->parseType ) {
 			if ( $fetch->sniff == false ) {
 				$inject = true;
 			}
-			
+
 			# Run through HTML parser
 			$document = $parser->HTMLDocument($document, $insert, $inject, $footer);
 

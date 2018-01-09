@@ -1,6 +1,6 @@
 <?php
 /*******************************************************************
-* Glype is copyright and trademark 2007-2015 UpsideOut, Inc. d/b/a Glype
+* Glype is copyright and trademark 2007-2016 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
 *
 * Use of Glype is subject to the terms of the Software License Agreement.
@@ -67,6 +67,9 @@ class parser {
 
 		# Prevent websites from calling disableOverride()
 		$input = preg_replace('#disableOverride#s', 'disabled___disableOverride', $input);
+
+		# Prevent websites from making STUN requests
+		$input = preg_replace('#RTCPeerConnection#s', 'disabled___RTCPeerConnection', $input);
 
 		# Remove titles if option is enabled
 		if ( $this->htmlOptions['stripTitle'] || $this->htmlOptions['encodePage'] ) {

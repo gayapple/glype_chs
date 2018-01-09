@@ -1,6 +1,6 @@
 <html>
 <head>
-   <title>403 ç¦æ­¢</title>
+   <title>403 ½ûÖ¹</title>
    <meta http-equiv="content-type" content="text/html; charset=utf8" />
    <style type="text/css">
 html, body {
@@ -30,8 +30,8 @@ label {
 </head>
 <body>
    <div id="wrapper">
-      <h1>403é”™è¯¯</h1>
-      <p>æ‚¨æ²¡æœ‰æƒé™ä½¿ç”¨è¿™ä¸ªæœåŠ¡.</p>
+      <h1>403´íÎó</h1>
+      <p>ÄúÃ»ÓÐÈ¨ÏÞÊ¹ÓÃÕâ¸ö·þÎñ.</p>
    </div>
 </body>
 </html>

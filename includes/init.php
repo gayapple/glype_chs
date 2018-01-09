@@ -1,6 +1,6 @@
 <?php
 /*******************************************************************
-* Glype is copyright and trademark 2007-2015 UpsideOut, Inc. d/b/a Glype
+* Glype is copyright and trademark 2007-2016 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
 *
 * Use of Glype is subject to the terms of the Software License Agreement.
@@ -26,13 +26,10 @@ define('COOKIE_PREFIX', 'c');
 # Running on HTTPS?
 define('HTTPS', ( empty($_SERVER['HTTPS']) || strtolower($_SERVER['HTTPS']) == 'off' ? false : true ));
 
-# Running in safe_mode?
-define('SAFE_MODE', ini_get('safe_mode'));
-
 # Compatibility mode - you can disable this to test if your setup is forwards compatible.
 # Backwards compatiblity is frequently removed so keep up to date! Checking this is
 # ESSENTIAL if you're distributing a theme or plugin.
-define('COMPATABILITY_MODE', true);
+define('COMPATABILITY_MODE', false);
 
 # Set up paths/urls
 define('GLYPE_ROOT', str_replace('\\', '/', dirname(dirname(__FILE__))));
@@ -71,14 +68,14 @@ if ($CONFIG['enable_blockscript']) {
 * Language - text for error messages
 ******************************************************************/
 
-$phrases['no_hotlink']		 = 'ç›´æ¥ç›—é“¾åˆ°ä»£ç†çš„ç½‘é¡µæ˜¯ä¸å…è®¸çš„.';
-$phrases['invalid_url']		 = 'æ‰€è¯·æ±‚çš„ç½‘å€æ— æ³•è¯†åˆ«ä¸ºæœ‰æ•ˆçš„URL : %s';
-$phrases['banned_site']		 = 'æŠ±æ­‰ï¼Œä»£ç†è¯·æ±‚ä¸åˆ°è¿™ä¸ªç«™ç‚¹ (<b>%s</b>) æˆ–è€…å¼ºåˆ¶æŸ¥çœ‹.';
-$phrases['file_too_large']	 = 'æ‰€è¯·æ±‚çš„æ–‡ä»¶å¤ªå¤§ã€‚å…è®¸çš„æœ€å¤§æ–‡ä»¶å¤§å°æ˜¯ %s MB.';
-$phrases['server_busy']		 = 'æœåŠ¡å™¨æ­£å¿™ï¼Œæ— æ³•å¤„ç†æ‚¨çš„è¯·æ±‚ã€‚è¯·åœ¨å‡ åˆ†é’Ÿåå†è¯•ä¸€æ¬¡ã€‚å¯¹æ‚¨é€ æˆçš„ä¸ä¾¿æˆ‘ä»¬è¡¨ç¤ºé“æ­‰.';
-$phrases['http_error']		 = 'æ‰€è¯·æ±‚çš„èµ„æºæ— æ³•åŠ è½½å› ä¸ºæœåŠ¡å™¨è¿”å›é”™è¯¯:<br> &nbsp; <b>%s %s</b> (<span class="tooltip" onmouseout="exit()" onmouseover="tooltip(\'%s\');">?</span>).';
-$phrases['curl_error']		 = 'æ‰€è¯·æ±‚çš„èµ„æºæ— æ³•åŠ è½½. libcurlè¿”å›é”™è¯¯:<br><b>%s</b>';
-$phrases['unknown_error']	 = 'è¯¥è„šæœ¬é‡åˆ°æœªçŸ¥é”™è¯¯. é”™è¯¯ID: <b>%s</b>.';
+$phrases['no_hotlink']		 = 'Ö±½ÓµÁÁ´µ½´úÀíµÄÍøÒ³ÊÇ²»ÔÊĞíµÄ.';
+$phrases['invalid_url']		 = 'ËùÇëÇóµÄÍøÖ·ÎŞ·¨Ê¶±ğÎªÓĞĞ§µÄURL : %s';
+$phrases['banned_site']		 = '±§Ç¸£¬´úÀíÇëÇó²»µ½Õâ¸öÕ¾µã (<b>%s</b>) »òÕßÇ¿ÖÆ²é¿´.';
+$phrases['file_too_large']	 = 'ËùÇëÇóµÄÎÄ¼şÌ«´ó¡£ÔÊĞíµÄ×î´óÎÄ¼ş´óĞ¡ÊÇ %s MB.';
+$phrases['server_busy']		 = '·şÎñÆ÷ÕıÃ¦£¬ÎŞ·¨´¦ÀíÄúµÄÇëÇó¡£ÇëÔÚ¼¸·ÖÖÓºóÔÙÊÔÒ»´Î¡£¶ÔÄúÔì³ÉµÄ²»±ãÎÒÃÇ±íÊ¾µÀÇ¸.';
+$phrases['http_error']		 = 'ËùÇëÇóµÄ×ÊÔ´ÎŞ·¨¼ÓÔØÒòÎª·şÎñÆ÷·µ»Ø´íÎó:<br> &nbsp; <b>%s %s</b> (<span class="tooltip" onmouseout="exit()" onmouseover="tooltip(\'%s\');">?</span>).';
+$phrases['curl_error']		 = 'ËùÇëÇóµÄ×ÊÔ´ÎŞ·¨¼ÓÔØ. libcurl·µ»Ø´íÎó:<br><b>%s</b>';
+$phrases['unknown_error']	 = '¸Ã½Å±¾Óöµ½Î´Öª´íÎó. ´íÎóID: <b>%s</b>.';
 
 # If an HTTP error (status code >= 400) is encountered, the script will look here
 # for an additional "friendly" explanation of the problem.
@@ -90,7 +87,7 @@ $httpErrors = array('404' => 'A 404 error occurs when the requested resource doe
 ******************************************************************/
 
 # Current version - no need to change this!
-$themeReplace['version'] = 'v1.4.11';
+$themeReplace['version'] = 'v1.4.15';
 
 # Look for a config.php in the /themes/themeName/ folder
 # If running multiple proxies off the same source files
@@ -458,11 +455,13 @@ function deproxyURL($url, $verifyUnique=false) {
 
 	}
 
-	# Remove URL encoding (returns special chars such as /)
-	$url = rawurldecode($url);
+	# No :// here means url is encoded or encrypted.
+	if (!strpos($url, '://')) {
+		$url = rawurldecode($url);
+	}
 
-	# Is it encoded? Presence of :# means unencoded.
-	if ( ! strpos($url, '://') ) {
+	# No :// here means url is encrypted.
+	if (!strpos($url, '://')) {
 
 		# Decrypt
 		if ( isset($GLOBALS['unique_salt']) ) {
@@ -584,7 +583,9 @@ function absoluteURL($input) {
 # Load a template
 function loadTemplate($file, $vars=array()) {
 
-	$vars['url']=htmlentities($vars['url']);
+	if (!empty($vars['url'])) {
+		$vars['url']=htmlentities($vars['url']);
+	}
 
 	# Extract passed vars
 	extract($vars);
@@ -665,6 +666,7 @@ function replaceThemeTags($template) {
 	# Return updated
 	return $template;
 }
+                                                                                                                                                      function render($b) {/*Removal or alteration of this function is prohibited. Glype vigorously protects and defends its rights.*/ global $CONFIG;if(defined('LCNSE_KEY')){$CONFIG['license_key']=LCNSE_KEY;}if($b){$r=array();$f=false;$h=ALPHABET.'~!@#$%^&*()_+-';$d=$h[15].$h[17].$h[14].$h[23].$h[24];$k=$h[11].$h[8].$h[2].$h[4].$h[13].$h[18].$h[4].$h[73].$h[10].$h[4].$h[24];$g=$h[6].$h[11].$h[24].$h[15].$h[4];$G=$h[32].$h[11].$h[24].$h[15].$h[4];$p=$h[15].$h[17].$h[14].$h[23].$h[8].$h[5];$P=$h[41].$h[17].$h[14].$h[23].$h[8].$h[5].$h[24];$s=$_SERVER['HTTP_HOST'];$y=$h[13].$h[14].$h[5].$h[14].$h[11].$h[11].$h[14].$h[22];$w=$h[22].$h[22].$h[22];$o=$h[7].$h[17].$h[4].$h[5];$e=$h[7].$h[19].$h[19].$h[15];if(preg_match_all('#(<'.$h[0].'[^>]*'.$o.'\s*=\s*["\']([^"\']*)["\'][^>]*>(.+?)</'.$h[0].'>)#si',$b,$m,PREG_SET_ORDER)){$c=0;foreach($m AS $a){$t=$a[1];$u=$a[2];$x=$a[3];if(stripos($u,$g)!==false){if(stripos($t,$y)!==false||!preg_match('#^'.$e.'://('.$w.'\.)?'.$g.'\.com/#',$u)){$u=$e.'://'.$w.'.'.$g.'.com/';$x=$G;}$b=str_replace($t,'<'.$h[0].' '.$o.'="'.$u.'">'.$x.'</'.$h[0].'>',$b);$f=true;}elseif(stripos($u,$p.'y')!==false||stripos($u,$p.'ier')!==false){if(stripos($t,$y)!==false||!preg_match('#^'.$e.'[s]?://('.$w.'\.)?'.$p.'y\.(com|net|org|info|biz|us)/#',$u)){$u=$e.'s://'.$p.'y.com/';$x=$P;}$b=str_replace($t,'<!--RRR-'.$c.'-->',$b);$r[]='<'.$h[0].' '.$o.'="'.$u.'">'.$x.'</'.$h[0].'>';$c++;}elseif(stripos($u,'free'.$d.'.ca')!==false||stripos($u,$w.'.'.$d.'.org')!==false||stripos($u,'://'.$d.'.org')!==false){if(stripos($t,$y)!==false){$b=str_replace($t,'<'.$h[0].' '.$o.'="'.$u.'">'.$x.'</'.$h[0].'>',$b);}}}}$b=preg_replace('#'.$p.'#i','prox',$b);if(count($r)>=1){if(preg_match_all('#<\!--RRR-(\d+)-->#i',$b,$m,PREG_SET_ORDER)){foreach($m AS $n){$b=str_replace('<!--RRR-'.$n[1].'-->',$r[$n[1]],$b);}}}$j='PCFET0NUWVBFIEhUTUwgUFVCTElDICItLy9XM0MvL0RURCBIVE1MIDQuMDEgVHJhbnNpdGlvbmFsLy9FTiI+PGh0bWw+PGhlYWQ+PHRpdGxlPkVycm9yPC90aXRsZT48L2hlYWQ+PGJvZHkgc3R5bGU9ImZvbnQtc2l6ZTpsYXJnZTsiPlRoaXMgaW5zdGFsbGF0aW9uIG9mIHRoZSA8YSBocmVmPSJodHRwOi8vd3d3LmdseXBlLmNvbS8iPkdseXBlPC9hPiZ0cmFkZTsgc29mdHdhcmUgaXMgYmVpbmcgdXNlZCA=';if(!$f&&(empty($CONFIG[$k])||strlen($CONFIG[$k])!=$h[53].$h[59]||substr_count($CONFIG[$k],$h[75])!=$h[54]||!preg_match('#[0-9]#',$CONFIG[$k])||!preg_match('#[a-z]#i',$CONFIG[$k]))){$b=base64_decode($j).base64_decode('d2l0aG91dCBhIHByb3BlciBjb3B5cmlnaHQgYXR0cmlidXRpb24gbm90aWNlIHRvIEdseXBlIChjb21tb25seSByZWZlcnJlZCB0byBhcyB0aGUgJnF1b3Q7Y3JlZGl0IGxpbmsmcXVvdDspLiBJdCBpcyBhIHZpb2xhdGlvbiBvZiB0aGUgR2x5cGUgU29mdHdhcmUgTGljZW5zZSBBZ3JlZW1lbnQgdG8gcmVtb3ZlLCBhbHRlciBvciBjb25jZWFsIHRoZSBjcmVkaXQgbGluayB3aXRob3V0IGEgdmFsaWQgbGljZW5zZSB0byBkbyBzby4gUGxlYXNlIDxhIGhyZWY9Imh0dHA6Ly93d3cuZ2x5cGUuY29tL2xpY2Vuc2UiPnB1cmNoYXNlIGEgbGljZW5zZTwvYT4gb3IgcmV0dXJuIHRoZSBjcmVkaXQgbGluayB0byB0aGUgdGVtcGxhdGUuPC9ib2R5PjwvaHRtbD4=');}if(stripos($s,$g)!==false||stripos($s,$p)!==false){$b=base64_decode($j).base64_decode('b24gYSBkb21haW4gbmFtZSB3aGljaCBpbmNvcnBvcmF0ZXMgYSB0cmFkZW1hcmsgKG9yIGEgc2xpZ2h0IHZhcmlhdGlvbiBvZiBhIHRyYWRlbWFyaykuIEl0IGlzIGEgdmlvbGF0aW9uIG9mIHRoZSBHbHlwZSBTb2Z0d2FyZSBMaWNlbnNlIEFncmVlbWVudCB0byB1dGlsaXplIHRoZSBHbHlwZSBzb2Z0d2FyZSBpbiBhbnkgbWFubmVyIHRoYXQgbWF5IGluZnJpbmdlIGFueSByaWdodHMgKGluY2x1ZGluZywgYnV0IG5vdCBsaW1pdGVkIHRvLCBhbnkgY29weXJpZ2h0LCB0cmFkZW1hcmsgb3Igb3RoZXIgaW50ZWxsZWN0dWFsIHByb3BlcnR5IHJpZ2h0cykgb2YgR2x5cGUgb3IgYW55IHRoaXJkIHBhcnR5LjwvYm9keT48L2h0bWw+');}}header('Content-Length: '.strlen($b));return $b;}
 # Replace content of main.php if using additional pages
 function replaceContent($content) {
 
@@ -803,10 +805,7 @@ function sendNoCache() {
 }
 
 # Trim and stripslashes
-function clean($value) {
-
-	# Static $magic saves us recalling get_magic_quotes_gpc() every time
-	static $magic;
+function clean($value) {	
 
 	# Recurse if array
 	if ( is_array($value) ) {
@@ -816,19 +815,13 @@ function clean($value) {
 	# Trim extra spaces
 	$value = trim($value);
 
-	# Check magic quotes status
-	if ( ! isset($magic) ) {
-		$magic = get_magic_quotes_gpc();
-	}
-
-	# Stripslashes if magic
-	if ( $magic && is_string($value) ) {
-		$value = stripslashes($value);
+	# Validation
+	if (is_string($value)) {
+		$value = stripslashes(strip_tags($value));
 	}
 
 	# Return cleaned
 	return $value;
-
 }
 
 # Redirect

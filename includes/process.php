@@ -1,6 +1,6 @@
 <?php
 /*******************************************************************
-* Glype is copyright and trademark 2007-2015 UpsideOut, Inc. d/b/a Glype
+* Glype is copyright and trademark 2007-2016 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
 *
 * Use of Glype is subject to the terms of the Software License Agreement.
@@ -32,7 +32,7 @@ switch ( $action ) {
 	case 'update':
 
 		# Valid input?
-		if ( ! isset($_POST['u']) || ! ( $url = clean($_POST['u']) ) ) {
+		if ( empty($_POST['u']) || ! ( $url = clean($_POST['u']) ) ) {
 			break;
 		}
 
@@ -192,7 +192,7 @@ switch ( $action ) {
 					foreach ( $file as $id => $line ) {
 
 						# Ignore comment lines
-						if ( ! isset($line[0]) || $line[0] == '#' ) {
+						if ( !empty($line[0]) || $line[0]=='#' ) {
 							continue;
 						}
 
@@ -230,7 +230,7 @@ switch ( $action ) {
 					$details = explode('|', $cookie, 3);
 
 					# Check for successful split
-					if ( ! isset($details[2]) ) {
+					if ( !isset($details[2]) ) {
 						continue;
 					}
 

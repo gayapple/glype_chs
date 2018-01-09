@@ -25,16 +25,19 @@ form {
    <base href="<?php echo GLYPE_URL; ?>/">
 </head>
 <body>
-	<div id="警告">
-		<h1>Warning!</h1>
-		<p>您访问的网站试图通过一个安全连接进行访问. 这个代理并非安全</p>
-      <p>点击将继续发送敏感数据, 并通过本在线浏览器发送给你</p>
+	<div id="wrapper">
+		<h1>警告
+	    !</h1>
+		<p>你试图浏览的网站是在一个安全的连接。这个代理不是一个安全的连接。</p>
+      <p>目标站点可以发送敏感数据,这可能是拦截时,代理将它发送回给你。
+</p>
       <form action="includes/process.php" method="get">
          <input type="hidden" name="action" value="sslagree">
-			<input type="submit" value="仍然继续...">
-         <input type="button" value="返回主页" onclick="window.location='.';">
+			<input type="submit" value="继续访问...">
+         <input type="button" value="返回" onclick="window.location='.';">
 		</form>
-      <p><b>注意:</b> 这个警告将会重复出现.</p>
+      <p>注意:这个警告将不会再出现。<br>
+      </p>
 	</div>
 </body>
 </html>
